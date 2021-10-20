@@ -38,5 +38,7 @@ if __name__ == "__main__":
     dir_name = os.path.join(os.path.dirname(os.path.abspath(__file__)), "..", "images")
     source = os.path.join(dir_name, "durst.png")
     dest = os.path.join(dir_name, "changed.png")
-    changes = [((255, 0, 0), (0, 255, 255))]
+    changes = [
+        ((255, 0, 0), (0, 255, 255)),  # Convert RED to CYAN
+    ]
     swap(source, dest, [(rgb_to_hls(*old), rgb_to_hls(*new)) for old, new in changes])
